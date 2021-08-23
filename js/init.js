@@ -44,4 +44,19 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+  // let usuario = JSON.parse( localStorage.getItem("usuario"));
+  // es si quiero acceder a los campos del usuario
+  
+  //.indexOf devuelve -1 si el string no esta incluido en el otro string
+  // lo que hago es asegurarme que para acceder al contenido de las paginas sea necesario iniciar sesion
+  if(location.href.indexOf(`login.html`) === -1 && localStorage.getItem("usuario") === null){
+    location.href = `login.html`;
+  }
 });
+
+// cerrar sesion local
+function cerrarSesion(){
+  localStorage.clear();
+  //signOut(); da problemas, si le doy tiempo siempre funciona en index, categorias y tmb creo q en productos, en productos info nunca funciono
+  location.href = `login.html`;
+};
