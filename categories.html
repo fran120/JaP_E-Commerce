@@ -5,6 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
+    <meta name="google-signin-client_id" content="936159128860-7ktlu6456bogntecgc88hvep4q6qbkf9.apps.googleusercontent.com">
     <title>eMercado - Todo lo que busques está aquí</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -13,6 +14,8 @@
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script src="js/google.js"></script>
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -76,7 +79,8 @@
     <footer class="text-muted bg-light">
       <div class="container">
         <p class="float-right">
-          <a href="#">Volver arriba</a>
+          <a href="#">Volver arriba</a><br>
+          <button class="btn btn-info" onclick="cerrarSesion();">Cerrar Sesión</button>
         </p>
         <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
         <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>

@@ -6,6 +6,9 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
+  <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="936159128860-7ktlu6456bogntecgc88hvep4q6qbkf9.apps.googleusercontent.com">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
   <title>eMercado - Todo lo que busques está aquí</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
@@ -13,31 +16,11 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
-  <style>
-    html, body{
-      height: 100%;
-    }
-
-    body {
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      padding-top: 40px;
-      padding-bottom: 40px;
-      background-color: #f5f5f5;
-    }
-
-    .signin {
-      width: 100%;
-      max-width: 330px;
-      padding: 15px;
-      margin: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="/css/login.css">
 </head>
 
 <body class="text-center">
+  <!-- 
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
@@ -46,8 +29,21 @@
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
   </div>
+-->
+<!-- Sign in interno-->
+<div class='form animated bounceIn'>
+  <h2>Iniciar sesión</h2>
+  <div>
+    <input placeholder='Usuario' type='text' id="usuario">
+    <input placeholder='Contraseña' type='password' id="contra">
+    <button class='animated infinite pulse' onclick="verificar();">Iniciar Sesión</button> <br> <br>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div> <br> <br>
+    <span id="mensaje"></span>
+  </div>
+</div>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
+  <script src="js/google.js"></script>
 </body>
 </html>
