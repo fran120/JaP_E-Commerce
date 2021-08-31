@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
 // cerrar sesion local
 function cerrarSesion(){
+  signOut(); //da problemas, si le doy tiempo siempre funciona en index, categorias y tmb creo q en productos, en productos info nunca funciono
   localStorage.clear();
-  //signOut(); da problemas, si le doy tiempo siempre funciona en index, categorias y tmb creo q en productos, en productos info nunca funciono
   location.href = `login.html`;
 };
