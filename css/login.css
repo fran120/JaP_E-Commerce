@@ -84,9 +84,3 @@ body {
   .form button:hover {
     background: #27ae60;
   }
-
-  .googleFBoton {
-    position: relative;
-    top: 50%;
-    left: 20%;
-  }
