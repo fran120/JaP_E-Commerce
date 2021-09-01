@@ -1,4 +1,4 @@
-
+/* Examina HTML y CSS (Less) de Flat Login Form por Andy Tran (@andytran).*/
 body {
     background: #2ecc71 url("https://38.media.tumblr.com/d23deac40b06633b79520a8552f40b94/tumblr_nb1uhrRrge1st5lhmo1_1280.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -83,4 +83,10 @@ body {
   }
   .form button:hover {
     background: #27ae60;
+  }
+
+  .googleFBoton {
+    position: relative;
+    top: 50%;
+    left: 20%;
   }
