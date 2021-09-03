@@ -52,6 +52,11 @@ document.addEventListener("DOMContentLoaded", function(e){
   if(location.href.indexOf(`login.html`) === -1 && localStorage.getItem("usuario") === null){
     location.href = `login.html`;
   }
+  let botonCS = document.getElementById(`botonCerrarSesion`);
+  if (botonCS != null){
+    botonCS.innerHTML += `<button class="btn btn-info" onclick="cerrarSesion();">Cerrar Sesión</button>`;
+  }
+
 });
 
 // cerrar sesion local
