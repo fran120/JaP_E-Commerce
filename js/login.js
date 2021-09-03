@@ -23,3 +23,9 @@ function verificar(){
         localStorage.setItem(`usuario`, JSON.stringify(seConecto));
     }
 };
+
+document.addEventListener(`keypress`, e => {
+    if (e.key == 'Enter'){
+        verificar();
+    }
+})
