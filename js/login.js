@@ -5,7 +5,13 @@ document.addEventListener("DOMContentLoaded", function(e){
     // lo que hago es asegurarme de que si ya se inicio sesion no vuelva a la pagina de login
     if(localStorage.getItem(`usuario`) != null){
         location.href = `index.html`;
-    }
+    };
+    
+    document.addEventListener(`keypress`, e => {
+        if (e.key == 'Enter'){
+         verificar();
+        };
+    })
 });
 
 function verificar(){
@@ -24,8 +30,3 @@ function verificar(){
     }
 };
 
-document.addEventListener(`keypress`, e => {
-    if (e.key == 'Enter'){
-        verificar();
-    }
-})
