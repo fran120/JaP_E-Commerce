@@ -25,7 +25,7 @@ function verificar(){
     } else {
         location.href = `index.html`;
         seConecto.nombre = user.value;
-        seConecto.imagen = `img/userCircle.png`;
+        seConecto.imgPerfil = `img/userCircle.png`;
         localStorage.setItem(`usuario`, JSON.stringify(seConecto));
     }
 };

@@ -47,15 +47,21 @@ document.addEventListener("DOMContentLoaded", function(e){
   // let usuario = JSON.parse( localStorage.getItem("usuario"));
   // es si quiero acceder a los campos del usuario
   
+  let usuario = JSON.parse(localStorage.getItem("usuario"));
   //.indexOf devuelve -1 si el string no esta incluido en el otro string
   // lo que hago es asegurarme que para acceder al contenido de las paginas sea necesario iniciar sesion
-  if(location.href.indexOf(`login.html`) === -1 && localStorage.getItem("usuario") === null){
+  if(location.href.indexOf(`login.html`) === -1 && usuario === null){
     location.href = `login.html`;
   }
+
+  // boton para cerrar sesion
   let botonCS = document.getElementById(`botonCerrarSesion`);
   if (botonCS != null){
     botonCS.innerHTML += `<button class="btn btn-info" onclick="cerrarSesion();">Cerrar Sesión</button>`;
   }
+
+  //foto de perfil
+  document.getElementById("imgPerfil").innerHTML = `<img src="${usuario.imgPerfil}" alt="" height=30px ></img>`
 
 });
 

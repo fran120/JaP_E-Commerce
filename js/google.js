@@ -15,7 +15,7 @@ function onSignIn(googleUser) {
     // console.log("ID Token: " + id_token);
     let seConecto = {};
     seConecto.nombre = profile.getName();
-    seConecto.imagen = profile.getImageUrl();
+    seConecto.imagPerfil = profile.getImageUrl();
     localStorage.setItem(`usuario`, JSON.stringify(seConecto));
     location.href = `index.html`;
   };
