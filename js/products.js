@@ -1,14 +1,23 @@
 
+//guardo en productos el fetch de productos y sus futuras modificaciones
 let productos = [];
+//usare fmin y fmax para guardar los datos para realizar el filtrado del array
 let fmin = undefined;
 let fmax = undefined;
+//usare aEncontrar para guardar el texto que buscara el buscador
+let aEncontrar = "";
 
 function mostrarProductos(){
-    
+    //primero filtro a los productos si es que hay o no una busqueda
+    let productosBuscados = productos.filter(producto => {
+        return ((producto.name.toLowerCase().indexOf(aEncontrar)>-1) || (producto.description.toLowerCase().indexOf(aEncontrar)>-1));
+    });
+
     let htmlContentToAppend = '';
 
-        for(producto of productos){
+        for(producto of productosBuscados){
             
+            // este if esta para poder filtrar los elementos a mostrar en pantalla
             if ( ((fmin == undefined) || parseInt(producto.cost) >= fmin) &&
             ((fmax == undefined) || parseInt(producto.cost) <= fmax) ){
 
@@ -74,4 +83,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
         document.getElementById(`precioMax`).value = undefined;
         mostrarProductos();
     });
+
+    document.getElementById(`buscador`).addEventListener(`keyup`, ()=>{
+        aEncontrar = document.getElementById(`buscador`).value.toLowerCase();
+        mostrarProductos();
+    });
+
 });

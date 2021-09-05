@@ -34,6 +34,15 @@
       <div class="row">
          <div class="col text-right">
              <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
+              <!--pongo el buscador de texto a continuacion-->
+              <div class="input-group rounded">
+                <input type="search" class="form-control rounded" placeholder="Buscar" aria-label="Search"
+                  aria-describedby="search-addon" id="buscador"/>
+                <span class="input-group-text border-0" id="search-addon">
+                  <i class="fas fa-search"></i>
+                </span>
+              </div>
+              <!-- pongo los botones de orden ascendente y descendiente-->
               <div class="col">
                 <p class="font-weight-normal text-right my-2">Precio</p>
               </div>
@@ -53,12 +62,14 @@
               <div class="col">
                 <p class="font-weight-normal text-right my-2">Precio</p>
               </div>
+              <!--pongo el minimo y maximo para la lista filtrada-->
               <div class="col">
                 <input class="form-control" type="number" placeholder="min." id="precioMin">
               </div>
               <div class="col">
                <input class="form-control" type="number" placeholder="máx." id="precioMax">
               </div>
+              <!--pongo el contolador para buscar con filtrado y otro para resetear la busqueda-->
               <div class="col-3 p-0">
                 <div class="btn-group" role="group">
                   <button class="btn btn-light btn-block" id="filtrar">Filtrar</button>
