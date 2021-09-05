@@ -60,7 +60,8 @@ document.addEventListener("DOMContentLoaded", function(e){
     botonCS.innerHTML += `<button class="btn btn-info" onclick="cerrarSesion();">Cerrar Sesión</button>`;
   }
 
-  //foto de perfil
+  //nombre de usuario y foto de perfil
+  document.getElementById("perfil").innerHTML = usuario.nombre;
   document.getElementById("imgPerfil").innerHTML = `<img src="${usuario.imgPerfil}" alt="" height=30px ></img>`
 
 });
