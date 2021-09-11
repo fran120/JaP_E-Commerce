@@ -62,8 +62,7 @@ document.addEventListener("DOMContentLoaded", function(e){
 
   //nombre de usuario y foto de perfil
   document.getElementById("perfil").innerHTML = usuario.nombre;
-  document.getElementById("imgPerfil").innerHTML = `<img src="${usuario.imgPerfil}" alt="" height=30px ></img>`
-
+  document.getElementById("imgPerfil").innerHTML = `<img src="${usuario.imgPerfil}" referrerpolicy="no-referrer" alt="" height=30px ></img>`
 });
 
 // cerrar sesion local
