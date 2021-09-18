@@ -14,6 +14,8 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href="css/stars.css" rel="stylesheet">
   <script src="js/google.js"></script>
 </head>
 
@@ -31,6 +33,7 @@
      </div>
     </div>
   </nav>
+  <!--
   <div class="container p-5">
     <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
       <h4 class="alert-heading">¡A trabajar! :)</h4>
@@ -39,6 +42,82 @@
       <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
     </div>
   </div>
+  -->
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+          seleccionado previamente, siempre se visualizará el presente: <strong>Chevrolet Onix Joy</strong>.</p>
+
+          <h2 id="productName"></h2>
+      </div>
+      <dl>
+        <!-- a continuacion van las imagenes del producto-->
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+        
+        <dt>Precio</dt>
+        <dd>
+          <p id="productCost"></p>
+        </dd>
+
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Cantidad de articulos vendidos</dt>
+        <dd>
+          <p id="productSold"></p>
+        </dd>
+
+        <dt>Categoría</dt>
+        <dd>
+          <p id="productCategory"></p>
+        </dd>
+
+      </dl>
+    </div>
+
+    <hr class="my-3">
+    <!-- a continuacion va la zona de comentarios-->
+    <div class="container mt-5">
+      <h3>Comentarios</h3>
+      <!--primero cargo los comentarios antiguos-->
+      <div id="comentarios">
+        
+      </div>
+      <!--despues creo un form para enviar comentarios-->
+        <!-- lo modifique y saque los form y lo cambie a inputs para asi cargo en pag el comentario nuevo
+          (si se sale de la pagina el comentario desaparece)-->
+      <div id="newComentario" class="">
+            <div class="cont">
+              <div class="title">
+                <h1>Danos tu opinión</h1>
+              </div>
+              <div class="stars">
+                <form action="">
+                  <input class="star star-5" id="star-5" type="radio" name="star"/>
+                  <label class="star star-5" for="star-5"></label>
+                  <input class="star star-4" id="star-4" type="radio" name="star"/>
+                  <label class="star star-4" for="star-4"></label>
+                  <input class="star star-3" id="star-3" type="radio" name="star"/>
+                  <label class="star star-3" for="star-3"></label>
+                  <input class="star star-2" id="star-2" type="radio" name="star"/>
+                  <label class="star star-2" for="star-2"></label>
+                  <input class="star star-1" id="star-1" type="radio" name="star"/>
+                  <label class="star star-1" for="star-1"></label>
+                </form>
+              </div>
+              <textarea name="cuerpo" cols="30" rows="3" id="cuerpo"></textarea><br>
+              <button class='btn btn-success' onclick="comentar();">Comentar</button><br><br>
+              <span id="alerta"></span>
+              </div>
+      </div>
+    </div>
+  </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right" id="botonCerrarSesion">
