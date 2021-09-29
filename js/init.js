@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             ${usuario.nombre}
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="cart.html">Mi carrito</a>
               <a class="dropdown-item" href="my-profile.html">Perfil</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#" id="cerrarSesion">Cerrar Sesión</a>
