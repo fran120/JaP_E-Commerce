@@ -54,20 +54,33 @@ document.addEventListener("DOMContentLoaded", function(e){
     location.href = `login.html`;
   }
 
-  // boton para cerrar sesion
-  let botonCS = document.getElementById(`botonCerrarSesion`);
-  if (botonCS != null){
-    botonCS.innerHTML += `<button class="btn btn-info" onclick="cerrarSesion();">Cerrar Sesión</button>`;
-  }
+  //nombre de usuario y foto de perfil => dropdown menu
+  document.getElementById("perfilDropdown").innerHTML = 
+  `
+  <div id="imgPerfil">
+  <img src="${usuario.imgPerfil}" referrerpolicy="no-referrer" alt="" height=30px ></img>
+  </div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            ${usuario.nombre}
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="my-profile.html">Perfil</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" id="cerrarSesion">Cerrar Sesión</a>
+            </div>
+          </div>
+  `;
 
-  //nombre de usuario y foto de perfil
-  document.getElementById("perfil").innerHTML = usuario.nombre;
-  document.getElementById("imgPerfil").innerHTML = `<img src="${usuario.imgPerfil}" referrerpolicy="no-referrer" alt="" height=30px ></img>`
+  // boton para cerrar sesion
+  document.getElementById("cerrarSesion").addEventListener("click", ()=>{
+    cerrarSesion();
+  });
 });
 
 // cerrar sesion local
 function cerrarSesion(){
-  signOut(); //da problemas, si le doy tiempo siempre funciona en index, categorias y tmb creo q en productos, en productos info nunca funciono
+  signOut();
   localStorage.clear();
   location.href = `login.html`;
 };
