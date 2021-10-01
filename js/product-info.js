@@ -47,6 +47,31 @@ function starRating(numero){
     return texto;
 }
 
+function mostrarProductosRelacionados(array){
+    getJSONData(PRODUCTS_URL).then(datos => {
+        if(datos.status === "ok"){
+            let arrayProductos = datos.data;
+            let prodsRel = ``;
+            array.forEach(productoRel => {
+                prodsRel += 
+                `
+            <div class="col-md-4">
+              <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                <img class="bd-placeholder-img card-img-top"  src="${arrayProductos[productoRel].imgSrc}">
+                <h3 class="m-3">${arrayProductos[productoRel].name} ${arrayProductos[productoRel].currency} ${arrayProductos[productoRel].cost}</h3>
+                <div class="card-body">
+                  <p class="card-text">${arrayProductos[productoRel].description}</p>
+                </div>
+              </a>
+            </div>
+                `;
+            });
+            document.getElementById("prodRelacionados").innerHTML = prodsRel;
+        }
+    });
+    
+}
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
@@ -64,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function(e){
             document.getElementById("productCost").innerHTML = `${producto.currency} ${producto.cost}`
 
             mostrarImagenesProducto(producto.images);
+            mostrarProductosRelacionados(producto.relatedProducts);
         }
     })
     //cargo los comentarios del producto
