@@ -1,17 +1,19 @@
 
 function mostrarImagenesProducto(array){
     let imagenesTotales = "";
-    
+    let contador = 0;
     for(imagen of array){
+        if(contador == 0){
+            imagenesTotales += `<div class="carousel-item active">`;
+        } else {
+            imagenesTotales += `<div class="carousel-item">`;
+        }
         imagenesTotales += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="${imagen}" alt="">
-            </div>
+                <img class="d-block w-100" src="${imagen}" alt="">
         </div>
         `;
-    }
-
+        contador++;
+    };
     document.getElementById("productImagesGallery").innerHTML = imagenesTotales;
 }
 
