@@ -15,9 +15,12 @@ function onSignIn(googleUser) {
     // console.log("ID Token: " + id_token);
     let seConecto = {};
     seConecto.nombre = profile.getName();
-    seConecto.imagPerfil = profile.getImageUrl();
+    seConecto.imgPerfil = profile.getImageUrl();
     localStorage.setItem(`usuario`, JSON.stringify(seConecto));
     location.href = `index.html`;
+
+    // unos compañeros lo tenian asi
+    // var id_token = googleUser.getAuthResponse().id_token;
   };
   
   // cerrar sesion de google

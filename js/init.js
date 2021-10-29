@@ -53,31 +53,31 @@ document.addEventListener("DOMContentLoaded", function(e){
   // lo que hago es asegurarme que para acceder al contenido de las paginas sea necesario iniciar sesion
   if(location.href.indexOf(`login.html`) === -1 && usuario === null){
     location.href = `login.html`;
+  } else { //NO estoy en login.html
+    //nombre de usuario y foto de perfil => dropdown menu
+    document.getElementById("perfilDropdown").innerHTML = 
+    `
+    <div id="imgPerfil">
+    <img src="${usuario.imgPerfil}" referrerpolicy="no-referrer" alt="" height=30px ></img>
+    </div>
+           <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+             ${usuario.nombre}
+             </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                <a class="dropdown-item" href="my-profile.html">Perfil</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" id="cerrarSesion">Cerrar Sesión</a>
+             </div>
+           </div>
+    `;
+
+   // boton para cerrar sesion
+   document.getElementById("cerrarSesion").addEventListener("click", ()=>{
+      cerrarSesion();
+    })
   }
-
-  //nombre de usuario y foto de perfil => dropdown menu
-  document.getElementById("perfilDropdown").innerHTML = 
-  `
-  <div id="imgPerfil">
-  <img src="${usuario.imgPerfil}" referrerpolicy="no-referrer" alt="" height=30px ></img>
-  </div>
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            ${usuario.nombre}
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="cart.html">Mi carrito</a>
-              <a class="dropdown-item" href="my-profile.html">Perfil</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#" id="cerrarSesion">Cerrar Sesión</a>
-            </div>
-          </div>
-  `;
-
-  // boton para cerrar sesion
-  document.getElementById("cerrarSesion").addEventListener("click", ()=>{
-    cerrarSesion();
-  });
 });
 
 // cerrar sesion local
