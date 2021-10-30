@@ -144,7 +144,7 @@ function comentar(){
         <div class="row list-group-item list-group-item-action">
             <div class="d-flex w-100 justify-content-between">
                 <h4 class="mb-1"> 
-                    <img src="${usuario.imgPerfil}" referrerpolicy="no-referrer" alt="" height=30px ></img> 
+                    <img src="${usuario.imgPerfil}" referrerpolicy="no-referrer" alt="" height=30px rounded-circle p-1></img> 
                     ${usuario.nombre} 
                 </h4>
                 <small class="text-muted"> Recién </small>

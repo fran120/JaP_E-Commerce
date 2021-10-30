@@ -26,6 +26,10 @@ function verificar(){
         location.href = `index.html`;
         seConecto.nombre = user.value;
         seConecto.imgPerfil = `img/userCircle.png`;
+        seConecto.apellidos = "";
+        seConecto.edad = "";
+        seConecto.email = "";
+        seConecto.telefono = "";
         localStorage.setItem(`usuario`, JSON.stringify(seConecto));
     }
 };

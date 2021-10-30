@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", function(e){
     //nombre de usuario y foto de perfil => dropdown menu
     document.getElementById("perfilDropdown").innerHTML = 
     `
-    <div id="imgPerfil">
-    <img src="${usuario.imgPerfil}" referrerpolicy="no-referrer" alt="" height=30px ></img>
+    <div>
+    <img src="${usuario.imgPerfil}" referrerpolicy="no-referrer" alt="" height=30px class="rounded-circle" id="imgPerfil"></img>
     </div>
            <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

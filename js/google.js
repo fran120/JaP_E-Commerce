@@ -14,8 +14,12 @@ function onSignIn(googleUser) {
     // var id_token = googleUser.getAuthResponse().id_token;
     // console.log("ID Token: " + id_token);
     let seConecto = {};
-    seConecto.nombre = profile.getName();
+    seConecto.nombre = profile.getGivenName();
+    seConecto.apellidos = profile.getFamilyName();
     seConecto.imgPerfil = profile.getImageUrl();
+    seConecto.edad = "";
+    seConecto.email = profile.getEmail();
+    seConecto.telefono = "";
     localStorage.setItem(`usuario`, JSON.stringify(seConecto));
     location.href = `index.html`;
 
