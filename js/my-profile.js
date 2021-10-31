@@ -61,6 +61,9 @@ function cancelar(){
     document.getElementById("email").disabled = true;
     document.getElementById("telefono").disabled = true;
 
+    //vuelvo a poner loos resultados default
+    mostrarUsuario();
+
     document.getElementById("divEditar").classList.remove("invisible");
     document.getElementById("divGuardar").classList.add("invisible");
     document.getElementById("divCancelar").classList.add("invisible");
@@ -75,8 +78,11 @@ function guardarImagen(){
     //donde tengo que actualizar la imágen
     let menuImg = document.getElementById("imgPerfil");
     let mainImg = document.getElementById("imagenPerfil");
+    //una forma un poco mas compleja de hacer getEleetnByID
     let file = document.querySelector("input[type=file]").files[0];
 
+    //permite que las aplicaciones web lean ficheros (o información en buffer) 
+     //almacenados en el cliente de forma asíncrona
     let reader = new FileReader(); //nueva instancia del objeto
     reader.onloadend = ()=>{
         menuImg.src = reader.result;
@@ -87,6 +93,10 @@ function guardarImagen(){
         localStorage.setItem("usuario", JSON.stringify(usuario));
     }
 
+    //El método readAsDataURL es usado para leer el contenido del especificado Blob o File.  
+     //Cuando la operación de lectura es terminada, el readyState (en-US) se convierte en DONE, 
+      //y el loadend es lanzado. En ese momento, el atributo result contiene  la información como una URL 
+       //representando la información del archivo como una cadena de caracteres codificados en base64.
     if (file) {
         reader.readAsDataURL(file);
     }

@@ -20,24 +20,22 @@ function mostrarProductos(){
             // este if esta para poder filtrar los elementos a mostrar en pantalla
             if ( ((fmin == undefined) || parseInt(producto.cost) >= fmin) &&
             ((fmax == undefined) || parseInt(producto.cost) <= fmax) ){
-
+                // https://getbootstrap.com/docs/4.3/examples/album/#
+                 // lindo ejempo de como usar este estilo con responsive
                 htmlContentToAppend += `
-                <a href="product-info.html" class="list-group-item list-group-item-action">
-                  <div class="row">
-                      <div class="col-3">
-                         <img src="` + producto.imgSrc + `" alt="` + producto.description + `" class="img-thumbnail">
-                     </div>
-                      <div class="col">
-                         <div class="d-flex w-100 justify-content-between">
-                               <h4 class="mb-1">`+ producto.name +`</h4>
+                    <div class="col-md-4">
+                        <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+                            <img class="bd-placeholder-img card-img-top"  src="${producto.imgSrc}">
+                            <h3 class="m-3">${producto.name}</h3>
+                            <div class="card-body">
+                              <p class="card-text">${producto.description}</p>
+                               Obtengalo por tan solo ${producto.cost} ${producto.currency}
                             </div>
-                            <p class="mb-1">` + producto.description + `</p>
-                         <p class="mb-1"> Obtengalo por tan solo ${producto.cost} ${producto.currency} </p>
-                      </div>
-                 </div>
-              </a>
-             ` 
+                        </a>
+                    </div>
+                `;
             }
+            
         }
         document.getElementById("vanProductos").innerHTML = htmlContentToAppend;
 };
