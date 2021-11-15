@@ -76,9 +76,7 @@
         </div>
       </div>
       <div class="container subtotal">
-        
         <ul>
-          
           <li class="totalRow">
             <span class="label">Subtotal</span><span class="value" id="subTotal"></span> USD
           </li>
@@ -91,11 +89,239 @@
             <span class="label">Tax</span><span class="value">$4.00</span>
           </li>
           -->
+          <li class="totalRow">
+            <!-- Button trigger modal -->
+            <span class="label">
+              <button type="button" class="btn btn-link" data-toggle="modal" data-target="#envioModal">
+                Tipo de Envio
+              </button>
+            </span>
+          </li>
+
+          <li class="totalRow ">
+            <span class="label">Costo de Envio</span><span class="value" id="soloEnvio"></span> USD
+          </li>
+          <li class="totalRow">
+
           <li class="totalRow final">
             <span class="label">Total</span><span class="value" id="precioTotal"></span> USD
           </li>
-          <li class="totalRow"><button type="button" class="btn btn-success">Checkout</button></li>
+          <li class="totalRow">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#checkout">
+              Checkout
+            </button>
+
+            
+          </li>
         </ul>
+        <!-- Modal, lo pongo fuera de la lista para que la misma no modifique los estilos del modal -->
+        <!-- Modal del envio-->
+        <div class="modal fade" id="envioModal" tabindex="-1" role="dialog" aria-labelledby="envioLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="envioLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                
+                <div class="mb-3">
+                  <h6>Dirección</h6>
+                  <br>
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h7 class="mb-0">Calle</h7>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" id="calle" >
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h7 class="mb-0">Número</h7>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="number" class="form-control" id="numeroCasa" >
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h7 class="mb-0">Esquina</h7>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" id="esquina" >
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h7 class="mb-0">País</h7>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" id="pais" >
+                    </div>
+                  </div>
+
+                  <hr>
+                  
+                  <h6>
+                      Tipo de Envio <button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="right" 
+                      title=
+                      "Premium (2-5 días) - Costo del 15% sobre el subtotal. 
+Express (5-8 días) - Costo del 7% sobre el subtotal. 
+Standard (12 a 15 días) - Costo del 5% sobre el subtotal.
+                      ">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                          <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/>
+                          </svg>
+                      </button>
+                  </h6>
+                  
+                  <!-- 
+                    Premium (2-5 días) - Costo del 15% sobre el subtotal.
+                    ○ Express (5-8 días) - Costo del 7% sobre el subtotal.
+                    ○ Standard (12 a 15 días) - Costo del 5% sobre el subtotal.
+                  -->
+                  <div class="d-block my-3">
+                    <div class="custom-control custom-radio">
+                      <input id="envioPremium" name="tipoEnvio" type="radio" class="custom-control-input" checked="" required="">
+                      <label class="custom-control-label" for="envioPremium">Premium (15%)</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input id="envioExpress" name="tipoEnvio" type="radio" class="custom-control-input" required="">
+                      <label class="custom-control-label" for="envioExpress">Express (7%)</label>
+                    </div>
+                    <div class="custom-control custom-radio">
+                      <input id="envioEstandar" name="tipoEnvio" type="radio" class="custom-control-input" required="">
+                      <label class="custom-control-label" for="envioEstandar">Estándar (5%)</label>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Modal finl del checkout-->
+        <div class="modal fade" id="checkout" tabindex="-1" role="dialog" aria-labelledby="checkoutLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="checkoutModalLabel">Checkout</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <!-- Seleccionar forma de pago -->
+                <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Forma de pago</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <select class="form-select" required aria-label="seleccionar forma de pago" id="metodoDePago">
+                        <option value="0">Seleccionar método de pago</option>
+                        <option value="1">Tarjeta de crédito</option>
+                        <option value="2">Transferencia bancaria</option>
+                      </select>
+                    </div>
+                </div>
+                  
+                <!-- tengo 2 opciones-->
+                <!-- 1 es una transferencia bancaria
+                  voy a necesitar los siguientes datos:
+                  banco de origen, cuenta bancaria, numero de ruta-->
+                <div class="invisible" id="transferencia">
+
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h7 class="mb-0">Banco de Orígen</h7>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" id="bancoOrigen" >
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h7 class="mb-0">Cuenta Bancaria</h7>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" id="cuentaBancaria" >
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h7 class="mb-0">Número de Ruta</h7>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" id="numRuta" >
+                    </div>
+                  </div>
+                </div>
+                <!-- 2 es que sea a traves de tarjeta de crédito
+                  voy a necesitar los siguientes datos:
+                  el número que aparece al frente, la fecha de vencimiento y código de seguridad, 
+                  además de los datos personales con los que se encuentra registrada, como tu nombre completo y 
+                  tu dirección.-->
+                <div class="invisible" id="credito">
+                    
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h7 class="mb-0">Número de la Tarjeta</h7>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="number" class="form-control" id="numTarjeta" >
+                    </div>
+                  </div>
+  
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h7 class="mb-0">Código de Seguridad</h7>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" id="codigoSeguridad" >
+                    </div>
+                  </div>
+                  
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h7 class="mb-0">Nombre Completo</h7>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" id="nombre" >
+                    </div>
+                  </div>
+                    
+                  <div class="row mb-3">
+                    <div class="col-sm-3">
+                      <h7 class="mb-0">Dirección</h7>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <input type="text" class="form-control" id="direccionCredito" >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-success">Confirmar Compra</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- fin modal -->
       </div>
     </main>
     <!---->

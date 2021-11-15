@@ -81,7 +81,7 @@ input {
     height: auto;
 }
 
-/* Lo siguiente fue inspirado de https://codepen.io/alex_rodrigues/pen/ABGdg*/
+/* Lo siguiente fue inspirado de https://codepen.io/alex_rodrigues/pen/ABGdg */
   .subtotal {
     float: right;
     width: 35%;
@@ -109,3 +109,15 @@ input {
     letter-spacing: -.025em;
     width: 35%;
   }
+
+/* Agrego yo*/
+/* Para mostrar/ocultar los input segun transferencia/credito*/
+.invisible {
+  display: none;
+}
+
+.cerrar {
+  position: absolute; /* or position: fixed; */
+  top: 0;
+  right: 0;
+}
