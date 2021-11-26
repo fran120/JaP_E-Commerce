@@ -14,18 +14,18 @@ function calcularPrecios(){
         document.getElementById("subtotal"+index).innerHTML = multi.toFixed(2); //2 cifras significativas
         total += multi;
     };
-    document.getElementById("subTotal").innerHTML = total.toFixed(2);
+    document.getElementById("subTotal").innerHTML = "$" + total.toFixed(2);
     // Calculo el precio total
     let arrayTipoEnvio = document.getElementsByName("tipoEnvio");
     if(arrayTipoEnvio[0].checked){
-        document.getElementById("soloEnvio").innerHTML = (total*0.15).toFixed(2);
-        document.getElementById("precioTotal").innerHTML = (total*1.15).toFixed(2);
+        document.getElementById("soloEnvio").innerHTML = "$" + (total*0.15).toFixed(2);
+        document.getElementById("precioTotal").innerHTML = "$" + (total*1.15).toFixed(2);
     } else if(arrayTipoEnvio[1].checked){
-        document.getElementById("soloEnvio").innerHTML = (total*0.07).toFixed(2);
-        document.getElementById("precioTotal").innerHTML = (total*1.07).toFixed(2);
+        document.getElementById("soloEnvio").innerHTML = "$" + (total*0.07).toFixed(2);
+        document.getElementById("precioTotal").innerHTML = "$" + (total*1.07).toFixed(2);
     } else if(arrayTipoEnvio[2].checked){
-        document.getElementById("soloEnvio").innerHTML = (total*0.05).toFixed(2);
-        document.getElementById("precioTotal").innerHTML = (total*1.05).toFixed(2);
+        document.getElementById("soloEnvio").innerHTML = "$" + (total*0.05).toFixed(2);
+        document.getElementById("precioTotal").innerHTML = "$" + (total*1.05).toFixed(2);
     }
     
 }
@@ -48,26 +48,41 @@ function mostrarProductos(){
                   </div>
                   <div class="product-content">
                       <h5 class="text-center text-md-left">${producto.name}</h5>
-                      <ul class="d-md-flex flex-wrap text-capitalize ff-open-sans">
-                          <li class="mr-md-4">
-                               <span  id="unitCost${index}">${producto.unitCost}</span> USD por unidad
-                          </li>
-                          <li class="mr-md-4">
-                               <input type="number" min="1" id="count${index}" value="${producto.count}" onchange="calcularPrecios();"> Unidades
-                          </li>
+                      <ul class="d-md-flex flex-wrap ff-open-sans">
+                        <li class="mr-md-4">
+                            <input type="number" min="1" id="count${index}" value="${producto.count}" onchange="calcularPrecios();">
+                        </li> 
+                        <li class="mr-md-4">
+                            x &nbsp <!-- non breaking space-->
+                            $<span  id="unitCost${index}">${producto.unitCost}</span>
+                        </li>
                       </ul>
                   </div>
               </div>
               <!-- Product right-->  
-              <div class="my-4 flex-shrink-0">
-                  Subtotal:
-                  <span id="subtotal${index}">${producto.count * producto.unitCost}</span> USD
+              <div class="my-4 flex-shrink-0 product-right">
+                  <ul class="d-md-flex flex-wrap ff-open-sans">
+                    <li class="mr-md-4">
+                        <!-- Subtotal: -->
+                        $<span id="subtotal${index}">${producto.count * producto.unitCost}</span>
+                    </li>
+                    <li class="mr-md-4">
+                        <button type="button" class="btn btn-link enLinea" id="delete${index}"> Eliminar </button>
+                    </li>
+                  </ul>
               </div>
         </div>
         `;
-    };
+    }
     document.getElementById("productosCarrito").innerHTML = productosInnerHTML;
     calcularPrecios();
+    for (let i = 0; i < productos.length; i++) {
+        document.getElementById(`delete${i}`).addEventListener("click", ()=> {
+            productos.splice(i, 1);
+            mostrarProductos();
+        }  
+        );
+    }
 }
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los

@@ -47,7 +47,7 @@ ul {
 }
 
 .product-content ul li {
-  font-weight: 600;
+  /* font-weight: 600; vueove a los numeros en negrita*/
   opacity: 0.75;
   border-bottom: 1px solid #ccc;
   padding: 10px 5px;
@@ -60,20 +60,24 @@ ul {
   }
 }
 
-.product-content ul li i {
-  font-size: 20px;
-  position: relative;
-  top: 1px;
-}
 .mb-30 {
     margin-bottom: 30px;
 }
 
 /* Otros que yo quiero agregar*/
 
+.product-right ul li {
+  font-weight: 600;
+  font-size: 20px;
+}
+
 input {
     text-align: center;
     width: 50px;
+}
+
+.enLinea {
+  display: inline;
 }
 
 .imgCarrito{
@@ -81,7 +85,22 @@ input {
     height: auto;
 }
 
+
 /* Lo siguiente fue inspirado de https://codepen.io/alex_rodrigues/pen/ABGdg */
+
+  .wrap { /* Esto hace q el mini menu sea responsive*/
+  width: 98%;
+  padding: 2% 0;
+  }
+  label {
+    display: block;
+    width: 100%;
+    font-style: italic;
+    font-size: 1.15em;
+ 
+    margin-bottom: .5em;
+    letter-spacing: -.025em;
+  }
   .subtotal {
     float: right;
     width: 35%;
@@ -107,17 +126,10 @@ input {
   }
   .subtotal .totalRow .value {
     letter-spacing: -.025em;
-    width: 35%;
+    /* width: 35%; Esto da problemas, me saca a la derecha, pero hace q los span esten en la misma linea*/
   }
-
 /* Agrego yo*/
 /* Para mostrar/ocultar los input segun transferencia/credito*/
 .invisible {
   display: none;
-}
-
-.cerrar {
-  position: absolute; /* or position: fixed; */
-  top: 0;
-  right: 0;
 }
