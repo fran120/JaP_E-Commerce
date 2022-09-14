@@ -1,4 +1,4 @@
-/*
+
 const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
@@ -8,8 +8,8 @@ const PRODUCT_INFO_COMMENTS_URL = "https://japdevdep.github.io/ecommerce-api/pro
 const CART_INFO_URL = "https://japdevdep.github.io/ecommerce-api/cart/987.json";
 const CART_INFO_URL_CHALLENGE = "https://japdevdep.github.io/ecommerce-api/cart/654.json";
 const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
-*/
 
+/*
 const CATEGORIES_URL = `http://localhost:3000/categories`;
 const PUBLISH_PRODUCT_URL = `http://localhost:3000/product_publish`;
 const CATEGORY_INFO_URL = `http://localhost:3000/category_info`;
@@ -19,7 +19,7 @@ const PRODUCT_INFO_COMMENTS_URL = `http://localhost:3000/products_comments`;
 const CART_INFO_URL = `http://localhost:3000/cart_old_articles`;
 const CART_INFO_URL_CHALLENGE = `http://localhost:3000/cart_articles`;
 const CART_BUY_URL = `http://localhost:3000/cart_buy`;
-
+*/
 var showSpinner = function(){
   document.getElementById("spinner-wrapper").style.display = "block";
 }
